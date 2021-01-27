@@ -2,26 +2,25 @@
 
 namespace ASP.NET_Core_MVC_Basic.Migrations
 {
-    public partial class addCategory : Migration
+    public partial class AddApplicationType : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                "Category",
+                "ApplicationType",
                 table => new
                 {
-                    CategoryId = table.Column<int>("int", nullable: false)
+                    Id = table.Column<int>("int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>("nvarchar(max)", nullable: true),
-                    DisplayOrder = table.Column<int>("int", nullable: false)
+                    Name = table.Column<string>("nvarchar(max)", nullable: true)
                 },
-                constraints: table => { table.PrimaryKey("PK_Category", x => x.CategoryId); });
+                constraints: table => { table.PrimaryKey("PK_ApplicationType", x => x.Id); });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                "Category");
+                "ApplicationType");
         }
     }
 }

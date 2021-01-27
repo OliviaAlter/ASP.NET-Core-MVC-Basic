@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace ASP.NET_Core_MVC_Basic.Models
 {
@@ -11,7 +8,12 @@ namespace ASP.NET_Core_MVC_Basic.Models
     {
         [Key]
         public int CategoryId { get; set; }
+        [Required]
         public string CategoryName { get; set; }
+        [DisplayName("Display Order")]
+        [Required]
+        [Range(1, int.MaxValue, 
+            ErrorMessage = "Display order for category must be larger than 0")]
         public int DisplayOrder { get; set; }
 
     }

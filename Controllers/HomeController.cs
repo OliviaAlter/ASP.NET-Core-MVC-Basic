@@ -1,11 +1,7 @@
-﻿using ASP.NET_Core_MVC_Basic.Models;
+﻿using System.Diagnostics;
+using ASP.NET_Core_MVC_Basic.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ASP.NET_Core_MVC_Basic.Controllers
 {
@@ -31,7 +27,7 @@ namespace ASP.NET_Core_MVC_Basic.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new ErrorViewModel {RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier});
         }
     }
 }
